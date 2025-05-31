@@ -143,20 +143,33 @@ Request clarification on specific points. "Can you clarify [specific aspect]?"
 ### Directory Structure:
 ```
 /
-├── README.md
-├── context/
-│   ├── INDEX.md
-│   ├── docs/
-│   ├── workflows/
-│   ├── [PROJECT_NAME]/
-│   │   ├── INDEX.md
-│   │   ├── architecture.md
-│   │   └── journal/
-│   │       ├── [YYYY-MM-DD]/
-│   │       │   ├── [HHMM]-[TASK_NAME].md
-├── [PROJECT_NAME]/
-│   ├── README.md
-│   └── (other project folders/files)
+├── src/
+│   ├── Domain/
+│   │   ├── Entities/
+│   │   ├── Enums/
+│   │   ├── Exceptions/
+│   │   ├── Interfaces/
+│   │   ├── ValueObjects/
+│   │   └── (other domain-specific folders)
+│   ├── Application/
+│   │   ├── Common/
+│   │   │   ├── Interfaces/
+│   │   │   └── Mappings/
+│   │   ├── [FeatureName]/
+│   │   │   ├── Commands/
+│   │   │   ├── Queries/
+│   │   └── (other application-specific folders)
+│   ├── Infrastructure/
+│   │   ├── Data/
+│   │   │   ├── Migrations/
+│   │   │   └── Configurations/
+│   │   ├── *Services/
+│   │   └── (other infrastructure-specific folders, e.g., Identity, FileStorage)
+│   ├── WebUI/  (or API if not a UI project)
+│   │   ├── Controllers/
+│   │   ├── Views/
+│   │   └── appsettings.json
+├── .gitignore
 ```
 
 ## Error Recovery
